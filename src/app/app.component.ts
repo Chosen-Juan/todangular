@@ -6,5 +6,18 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'todo-angular';
+  states = [
+    {
+      title: 'Planned',
+      cards: []
+    },
+    {
+      title: 'In Progress',
+      cards: []
+    },
+    {
+      title: 'Done',
+      cards: []
+    }
+  ];
 }

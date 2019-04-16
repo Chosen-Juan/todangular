@@ -1,0 +1,14 @@
+<div class="state">
+  <section class="header">
+    <h3>{{title}}</h3>
+  </section>
+  <section>
+    <div *ngFor="let card of cards" class="card">
+			<app-card id="{{card.id}}" [card]="card"></app-card>
+		</div>
+		<div *ngIf="!cards || !cards.length" class="no-cards">
+			<span>No cards</span>
+		</div>
+  </section>
+  <button (click)="addCard()">Add card</button>
+</div>
