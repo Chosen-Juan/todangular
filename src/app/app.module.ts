@@ -4,17 +4,21 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { StateComponent } from './state/state.component';
 import { CardComponent } from './card/card.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { CardService } from './services/card.service';
+import { ModalComponent } from './modal/modal.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     StateComponent,
-    CardComponent
+    CardComponent,
+    ModalComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    ReactiveFormsModule
   ],
   providers: [
     CardService

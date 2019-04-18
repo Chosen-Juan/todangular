@@ -6,6 +6,10 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./card.component.scss']
 })
 export class CardComponent {
+  @Input('card') card: {
+    title: String,
+    description: String,
+    estimate: number
+  };
 
-  @Input('card') card: {};
 }

@@ -1,5 +1,4 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
-import { CardService } from '../services/card.service';
 
 @Component({
   selector: 'app-state',
@@ -10,14 +9,8 @@ export class StateComponent {
   @Input() title: String;
   @Input() cards: [];
   @Output() cardsChange = new EventEmitter<any>();
-  cardService: CardService;
 
-  constructor(cardService: CardService) {
-    this.cardService = cardService;
-  }
-
-  addCard() {
-    const newCard = this.cardService.createCard('Title', 'Description', 10);
+  addCard(newCard) {
     this.cardsChange.emit([...this.cards, newCard]);
   }
 }

@@ -1,7 +1,5 @@
 <div class="state">
-  <section class="header">
-    <h3>{{title}}</h3>
-  </section>
+  <h3 class="title">{{title}}</h3>
   <section>
     <div *ngFor="let card of cards" class="card">
 			<app-card id="{{card.id}}" [card]="card"></app-card>
@@ -10,5 +8,5 @@
 			<span>No cards</span>
 		</div>
   </section>
-  <button (click)="addCard()">Add card</button>
+  <app-modal [newCard]="newCard"></app-modal>
 </div>
