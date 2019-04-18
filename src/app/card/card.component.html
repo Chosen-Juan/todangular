@@ -1,5 +1,17 @@
-<div class="card">
-  <h4>{{card.title}}</h4>
-  <p>{{card.description}}</p>
-  <p>{{card.estimate}}</p>
-</div>
+<article class="message is-info">
+  <div class="message-header">
+    {{card.title}}
+    <p class="is-pulled-right">Estimate: {{card.estimate}}</p>
+  </div>
+  <div class="message-body">
+    <div class="select is-info is-small is-pulled-right">
+      <select value="{{card.state}}" (change)="changeState($event, card)">
+        <option>Planned</option>
+        <option>In Progress</option>
+        <option>Done</option>
+      </select>
+    </div>
+    <p class="description">{{card.description}}</p>
+  </div>
+</article>
+

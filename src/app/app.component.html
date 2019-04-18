@@ -1,8 +1,9 @@
+<app-modal [addCard]="addCard"></app-modal>
 <div class="states">
   <app-state
     *ngFor="let state of states"
-    title="{{state.title}}"
-    [(cards)]="state.cards"
+    title="{{state}}"
+    [(cards)]="cards"
   >
   </app-state>
 </div>

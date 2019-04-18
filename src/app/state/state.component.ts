@@ -8,9 +8,8 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 export class StateComponent {
   @Input() title: String;
   @Input() cards: [];
-  @Output() cardsChange = new EventEmitter<any>();
 
-  addCard(newCard) {
-    this.cardsChange.emit([...this.cards, newCard]);
+  filterByState = card => {
+    return card.state === this.title;
   }
 }

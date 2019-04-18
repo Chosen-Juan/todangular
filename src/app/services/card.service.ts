@@ -5,11 +5,11 @@ import { Injectable } from '@angular/core';
 })
 export class CardService {
   id: number = 0;
-  createCard(title: String, description: String, estimate: number) {
+  createCard(title: String, description: String, estimate: number, state: String) {
     this.id++;
     return {
       id: this.id,
-      title, description, estimate
+      title, description, estimate, state
     };
   }
 

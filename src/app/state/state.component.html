@@ -1,12 +1,11 @@
 <div class="state">
   <h3 class="title">{{title}}</h3>
-  <section>
-    <div *ngFor="let card of cards" class="card">
+  <section class="cards">
+    <div *ngFor="let card of cards | filter: filterByState" class="card">
 			<app-card id="{{card.id}}" [card]="card"></app-card>
 		</div>
 		<div *ngIf="!cards || !cards.length" class="no-cards">
 			<span>No cards</span>
 		</div>
   </section>
-  <app-modal [newCard]="newCard"></app-modal>
 </div>

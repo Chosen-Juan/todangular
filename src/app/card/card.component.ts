@@ -12,4 +12,8 @@ export class CardComponent {
     estimate: number
   };
 
+  changeState(e, card) {
+    card.state = e.target.value;
+  }
+
 }

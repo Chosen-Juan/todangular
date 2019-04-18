@@ -8,13 +8,15 @@ import { ReactiveFormsModule } from '@angular/forms';
 
 import { CardService } from './services/card.service';
 import { ModalComponent } from './modal/modal.component';
+import { FilterPipe } from './filter.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     StateComponent,
     CardComponent,
-    ModalComponent
+    ModalComponent,
+    FilterPipe
   ],
   imports: [
     BrowserModule,

@@ -8,7 +8,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./modal.component.scss']
 })
 export class ModalComponent implements OnInit {
-  @Input() newCard: Function;
+  @Input() addCard: Function;
   private registerForm: FormGroup;
   private open: boolean = false;
   private submitted: boolean = false;
@@ -22,7 +22,7 @@ export class ModalComponent implements OnInit {
       title: ['', [Validators.required, Validators.maxLength(30)]],
       description: ['', [Validators.required, Validators.maxLength(150)]],
       estimate: [0, [Validators.required, Validators.min(1)]],
-      state: ['', Validators.required]
+      state: ['Planned', Validators.required]
     });
   }
 
@@ -37,7 +37,7 @@ export class ModalComponent implements OnInit {
     }
     const { title, description, estimate, state } = this.registerForm.value;
     const card = this.cardService.createCard(title, description, estimate, state);
-    this.newCard(card);
+    this.addCard(card);
     this.toggle();
   }
 

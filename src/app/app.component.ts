@@ -6,18 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  states = [
-    {
-      title: 'Planned',
-      cards: []
-    },
-    {
-      title: 'In Progress',
-      cards: []
-    },
-    {
-      title: 'Done',
-      cards: []
-    }
-  ];
+  states = ['Planned', 'In Progress', 'Done'];
+  cards = [];
+
+  addCard = newCard => {
+    this.cards.push(newCard);
+  }
 }
