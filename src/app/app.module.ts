@@ -10,6 +10,7 @@ import { CardService } from './services/card.service';
 import { ModalComponent } from './modal/modal.component';
 import { FilterPipe } from './filter.pipe';
 import { SumPipe } from './sum.pipe';
+import { TotalHoursComponent } from './total-hours/total-hours.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { SumPipe } from './sum.pipe';
     CardComponent,
     ModalComponent,
     FilterPipe,
-    SumPipe
+    SumPipe,
+    TotalHoursComponent
   ],
   imports: [
     BrowserModule,

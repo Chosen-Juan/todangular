@@ -1,4 +1,5 @@
 <div id="{{title}}" class="state" (drop)="onDrop($event)" (dragover)="allowDrop($event)">
+  <app-total-hours [hours]="cards | filter: filterByState | sum:'estimate'"></app-total-hours>
   <h3 class="title">{{title}}</h3>
   <section class="cards">
     <div *ngFor="let card of cards | filter: filterByState" class="card" id="{{card.id}}">

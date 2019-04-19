@@ -2,3 +2,10 @@ body {
   background: rgb(153, 216, 255);
 }
 
+.clock-icon {
+  display: inline-flex;
+  height: 1.1em;
+  width: 1.1em;
+  vertical-align: bottom;
+  background: url('/assets/clock.svg');
+}
