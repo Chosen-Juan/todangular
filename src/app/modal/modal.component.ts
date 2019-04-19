@@ -41,6 +41,7 @@ export class ModalComponent implements OnInit {
     this.addCard(card);
     this.toggle();
     this.registerForm.reset();
+    this.registerForm.controls.state.setValue('Planned');
   }
 
 }

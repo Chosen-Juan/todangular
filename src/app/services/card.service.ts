@@ -5,13 +5,7 @@ import { Injectable } from '@angular/core';
 })
 export class CardService {
   id: number = 0;
-  public cards = [{
-    id: 3,
-    title: 'sadasdas',
-    description: 'asdasdas',
-    estimate: 3,
-    state: 'Planned'
-  }];
+  public cards = [];
   createCard(title: String, description: String, estimate: number, state: String) {
     this.id++;
     return {
@@ -23,6 +17,12 @@ export class CardService {
   moveCard(cardId: number, newState: string) {
     const card = this.cards.find(c => c.id === cardId);
     card.state = newState;
+  }
+
+  deleteCard(cardId) {
+    const card = this.cards.find(c => c.id === cardId);
+    const index = this.cards.indexOf(card);
+    this.cards.splice(index, 1);
   }
 
 }

@@ -1,13 +1,18 @@
 <article class="message is-info">
   <div class="message-header">
-    {{card.title}}
-    <p class="is-pulled-right">
+    <p>
       {{card.estimate}}
       <span class="clock-icon"></span>
     </p>
+    {{card.title}}
+    <p class="is-pulled-right">
+      <span class="close">
+        <button class="delete" aria-label="close" (click)="delete(card.id)"></button>
+      </span>
+    </p>
   </div>
   <div class="message-body">
-    <div class="select is-info is-small is-pulled-right">
+    <div class="select is-small is-info is-pulled-right">
       <select value="{{card.state}}" (change)="changeState($event, card)">
         <option>Planned</option>
         <option>In Progress</option>
