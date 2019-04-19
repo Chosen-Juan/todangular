@@ -1,14 +1,15 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { StateComponent } from './state/state.component';
 import { CardComponent } from './card/card.component';
-import { ReactiveFormsModule } from '@angular/forms';
 
 import { CardService } from './services/card.service';
 import { ModalComponent } from './modal/modal.component';
 import { FilterPipe } from './filter.pipe';
+import { SumPipe } from './sum.pipe';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { FilterPipe } from './filter.pipe';
     StateComponent,
     CardComponent,
     ModalComponent,
-    FilterPipe
+    FilterPipe,
+    SumPipe
   ],
   imports: [
     BrowserModule,

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { CardService } from './services/card.service';
 
 @Component({
   selector: 'app-root',
@@ -7,7 +8,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   states = ['Planned', 'In Progress', 'Done'];
-  cards = [];
+  cards = this.cardService.cards;
+
+  constructor(private cardService: CardService) {}
 
   addCard = newCard => {
     this.cards.push(newCard);

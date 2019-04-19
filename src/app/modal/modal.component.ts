@@ -31,14 +31,16 @@ export class ModalComponent implements OnInit {
   }
 
   save() {
-    this.submitted = true;
     if (this.registerForm.invalid) {
+      this.submitted = true;
       return;
     }
+    this.submitted = false;
     const { title, description, estimate, state } = this.registerForm.value;
     const card = this.cardService.createCard(title, description, estimate, state);
     this.addCard(card);
     this.toggle();
+    this.registerForm.reset();
   }
 
 }

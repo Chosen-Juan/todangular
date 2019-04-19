@@ -1,11 +1,13 @@
-<div class="state">
+<div id="{{title}}" class="state" (drop)="onDrop($event)" (dragover)="allowDrop($event)">
   <h3 class="title">{{title}}</h3>
   <section class="cards">
-    <div *ngFor="let card of cards | filter: filterByState" class="card">
-			<app-card id="{{card.id}}" [card]="card"></app-card>
-		</div>
-		<div *ngIf="!cards || !cards.length" class="no-cards">
-			<span>No cards</span>
+    <div *ngFor="let card of cards | filter: filterByState" class="card" id="{{card.id}}">
+			<div draggable="true" (dragstart)="onDragStart($event, card)">
+        <app-card [card]="card"></app-card>
+      </div>
+    </div>
+		<div *ngIf="!(cards| filter: filterByState) || (cards| filter: filterByState).length <=0" class="no-cards">
+			<p>No cards</p>
 		</div>
   </section>
 </div>

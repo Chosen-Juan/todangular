@@ -1,12 +1,16 @@
 .state {
   min-width: 32.5%;
   margin: 0 0.5rem;
-  background: rgb(153, 216, 255);
+  background: #eee;
   display: inline-block;
   padding: 1rem;
   border-radius: 5px;
   vertical-align: top;
   .card:not(first-child) {
     margin-top: 1em;
+  }
+  .no-cards {
+    padding: 2vw 2vh;
+    border: 3px dotted #ddd;
   }
 }
